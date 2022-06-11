@@ -69,36 +69,36 @@ function optionChanged(id){
     getPlots(id);
     getDomo(id);
 }
-// function init(){
-//     var dropdown=d3.select("#selDatase")
-//     d3.json("data/samples.json").then (data=>{
-//         console.log(data)
-//         var name=data.names
-//         for (var i=0;i<name.length;i++){
-//             dropdown.append("option").text(i).property("value")
-            
-//         }
-//         getPlots(name[0]);
-//         getDomo(name[0])
-//     });
-
-// }
-function init() {
-    
-    var dropdown = d3.select("#selDataset");
-
-    d3.json("data/samples.json").then((data)=> {
+function init(){
+    var dropdown=d3.select("#selDatase")
+    d3.json("data/samples.json").then (data=>{
         console.log(data)
-        console.log(data.names[0])
-
-        data.names.forEach(function(name) {
-            dropdown.append("option").text(name).property("value");
-        });
-
-        // call the functions to display the data:
-        getPlots(data.names[0]);
-        getDomo(data.names[0]);
-        
+        var name=data.names
+        for (var i=0;i<name.length;i++){
+            dropdown.append("option").text(name[i]).property("value")
+            
+        }
+        getPlots(name[0]);
+        getDomo(name[0])
     });
+
 }
+// function init() {
+    
+//     var dropdown = d3.select("#selDataset");
+
+//     d3.json("data/samples.json").then((data)=> {
+//         console.log(data)
+//         console.log(data.names[0])
+
+//         data.names.forEach(function(name) {
+//             dropdown.append("option").text(name).property("value");
+//         });
+
+//         // call the functions to display the data:
+//         getPlots(data.names[0]);
+//         getDomo(data.names[0]);
+        
+//     });
+// }
 init()
